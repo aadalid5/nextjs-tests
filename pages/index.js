@@ -1,15 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import useCart from '../store/useCartStore'
 
 export default function Home({initialUsers}) {
-  console.log(initialUsers)
+  const total = useCart(state=>state.total);
+  console.log('client', total)
+
   return (
     <h1>HELLO Next</h1>
   )
 }
 
 const getServerSideProps = async({  }) =>{
+  // zustand store
+  useCart.setState({total:20})
+  console.log('server', useCart.getState().total)
+
   const response = await fetch('https://jsonplaceholder.typicode.com/users')
   const data = await response.json()
 
