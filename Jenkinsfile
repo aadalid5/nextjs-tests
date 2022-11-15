@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sshagent(["github-key-a-id"]){
                     script {
-                        sh 'git remote set-url origin  https://github.com/aadalid5/nextjs-tests.git'
+                        sh 'git remote set-url origin https://{aadalid5}:{5jmunj8}@github.com/{aadalid5}/nextjs-tests.git'
                         sh 'git push origin HEAD:main && git push --tags'
                     }
             }
