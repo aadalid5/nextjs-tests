@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "release:notes": "release-it"
+    "release:notes": "release-it --no-npm --no-git --no-increment --github.release --ci"
   },
   "dependencies": {
     "@commitlint/cli": "^17.2.0",
@@ -22,35 +22,5 @@
   "devDependencies": {
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.2"
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "bump version to ${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": false
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "CHANGELOG.md",
-        "preset": {
-          "name": "conventionalcommits",
-          "types": [
-            {
-              "type": "feat",
-              "section": "Features"
-            },
-            {
-              "type": "fix",
-              "section": "Bug Fixes"
-            },
-            {}
-          ]
-        }
-      }
-    }
   }
 }
