@@ -5,7 +5,7 @@ export default function Home({initialUsers}) {
   console.log('client', total)
 
   return (
-    <h1>HELLO NEXT 3</h1>
+    <h1>HELLO NEXT 6</h1>
   )
 }
 
